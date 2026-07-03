@@ -1,0 +1,33 @@
+<!doctype html>
+<html
+  lang="en"
+  xmlns:th="http://www.thymeleaf.org"
+  th:replace="layout :: layout"
+>
+  <div th:fragment="content">
+    <section class="page-intro">
+      <div class="intro-copy">
+        <h1>Holiday Calendar</h1>
+        <p>Find the company-approved leave days for the current year.</p>
+      </div>
+    </section>
+    <section class="content-section">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Month</th>
+            <th>Date</th>
+            <th>Holiday</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr th:each="holiday : ${holidays}">
+            <td th:text="${holiday.month}"></td>
+            <td th:text="${holiday.day}"></td>
+            <td th:text="${holiday.name}"></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </div>
+</html>

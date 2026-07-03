@@ -1,0 +1,41 @@
+<!doctype html>
+<html
+  lang="en"
+  xmlns:th="http://www.thymeleaf.org"
+  th:replace="layout :: layout"
+>
+  <div th:fragment="content">
+    <section class="page-intro">
+      <div class="intro-copy">
+        <h1>Contact IT</h1>
+        <p>
+          Find the IT support details for service requests and incident
+          reporting.
+        </p>
+      </div>
+    </section>
+    <section class="content-section contact-grid">
+      <div class="contact-card">
+        <h2>Support Details</h2>
+        <p><strong>Email:</strong> <span th:text="${contactEmail}"></span></p>
+        <p><strong>Phone:</strong> <span th:text="${contactPhone}"></span></p>
+        <p>
+          <strong>Location:</strong> <span th:text="${contactLocation}"></span>
+        </p>
+        <p>
+          <strong>Support Hours:</strong>
+          <span th:text="${supportHours}"></span>
+        </p>
+      </div>
+      <div class="contact-card">
+        <h2>Service Topics</h2>
+        <ul>
+          <li>Workstation setup and hardware requests</li>
+          <li>Software installations and access</li>
+          <li>Network and connectivity issues</li>
+          <li>Incident reporting and troubleshooting</li>
+        </ul>
+      </div>
+    </section>
+  </div>
+</html>

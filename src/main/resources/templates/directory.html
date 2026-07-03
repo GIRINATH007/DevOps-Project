@@ -1,0 +1,36 @@
+<!doctype html>
+<html
+  lang="en"
+  xmlns:th="http://www.thymeleaf.org"
+  th:replace="layout :: layout"
+>
+  <div th:fragment="content">
+    <section class="page-intro">
+      <div class="intro-copy">
+        <h1>Employee Directory</h1>
+        <p>
+          Use this static directory to view key team contacts across the
+          company.
+        </p>
+      </div>
+    </section>
+    <section class="content-section">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Role</th>
+            <th>Department</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr th:each="employee : ${directory}">
+            <td th:text="${employee.name}"></td>
+            <td th:text="${employee.role}"></td>
+            <td th:text="${employee.department}"></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </div>
+</html>

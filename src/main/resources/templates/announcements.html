@@ -1,0 +1,21 @@
+<!doctype html>
+<html
+  lang="en"
+  xmlns:th="http://www.thymeleaf.org"
+  th:replace="layout :: layout"
+>
+  <div th:fragment="content">
+    <section class="page-intro">
+      <div class="intro-copy">
+        <h1>Company Announcements</h1>
+        <p>Browse the latest updates, notices, and events for employees.</p>
+      </div>
+    </section>
+    <section class="content-section announcement-list">
+      <div th:each="announcement : ${announcements}" class="announcement-card">
+        <h2 th:text="${announcement.title}"></h2>
+        <p th:text="${announcement.summary}"></p>
+      </div>
+    </section>
+  </div>
+</html>

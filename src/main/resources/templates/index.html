@@ -1,0 +1,70 @@
+<!doctype html>
+<html
+  lang="en"
+  xmlns:th="http://www.thymeleaf.org"
+  th:replace="layout :: layout"
+>
+  <div th:fragment="content">
+    <section class="hero-section">
+      <div class="hero-copy">
+        <span class="eyebrow">Welcome to</span>
+        <h1 th:text="${companyName} ?: 'Company Intranet Portal'">
+          Company Intranet Portal
+        </h1>
+        <p
+          th:text="${tagline} ?: 'Connecting people, information, and services for a stronger workplace.'"
+        >
+          Connecting people, information, and services for a stronger workplace.
+        </p>
+      </div>
+      <div class="hero-actions">
+        <a href="/announcements" class="button">Latest News</a>
+        <a href="/contact" class="button button-secondary">Contact IT</a>
+      </div>
+    </section>
+    <section class="cards-grid">
+      <article class="card">
+        <h2>Announcements</h2>
+        <p>Stay current with company updates and important service notices.</p>
+        <a href="/announcements">View announcements</a>
+      </article>
+      <article class="card">
+        <h2>Holiday Calendar</h2>
+        <p>
+          See the approved company holidays and plan your schedule with
+          confidence.
+        </p>
+        <a href="/holidays">View calendar</a>
+      </article>
+      <article class="card">
+        <h2>HR Policies</h2>
+        <p>Review the latest guidelines for remote work, leave, and conduct.</p>
+        <a href="/policies">View policies</a>
+      </article>
+      <article class="card card--widget">
+        <h3>Policy Highlights</h3>
+        <ul>
+          <li
+            th:each="highlight : ${policyHighlights}"
+            th:text="${highlight}"
+          ></li>
+        </ul>
+      </article>
+      <article class="card card--widget">
+        <h3>Upcoming Holidays</h3>
+        <ul>
+          <li
+            th:each="holiday : ${holidays}"
+            th:text="${holiday.month} + ' ' + ${holiday.day} + ' - ' + ${holiday.name}"
+          ></li>
+        </ul>
+      </article>
+      <article class="card card--widget">
+        <h3>Employee Spotlight</h3>
+        <p
+          th:text="'Meet ' + ${directory[0].name} + ', ' + ${directory[0].role} + ' in ' + ${directory[0].department} + '.'"
+        ></p>
+      </article>
+    </section>
+  </div>
+</html>

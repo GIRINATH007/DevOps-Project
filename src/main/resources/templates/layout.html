@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:fragment="layout">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title th:text="${pageTitle} + ' | Company Intranet Portal'">Company Intranet Portal</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+</head>
+<body>
+<div class="page-shell">
+    <div th:replace="fragments/header :: header"></div>
+    <main class="content-area">
+        <div th:insert="~{::content}"></div>
+    </main>
+    <div th:replace="fragments/footer :: footer"></div>
+</div>
+<script src="/js/script.js"></script>
+</body>
+</html>

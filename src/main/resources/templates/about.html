@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="layout :: layout">
+<div th:fragment="content">
+<section class="page-intro">
+    <div class="intro-copy">
+        <h1>About the Company</h1>
+        <p>Our mission is to support staff through a dependable and transparent employee portal.</p>
+    </div>
+</section>
+<section class="content-section">
+    <div class="text-block">
+        <h2 th:text="${companyName}">Company Intranet Portal</h2>
+        <div th:each="paragraph : ${aboutParagraphs}">
+            <p th:text="${paragraph}"></p>
+        </div>
+    </div>
+    <aside class="info-panel">
+        <h3>Our Values</h3>
+        <ul>
+            <li th:each="value : ${companyValues}" th:text="${value}"></li>`
+        </ul>
+    </aside>
+</section>
+</html>

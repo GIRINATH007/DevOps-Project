@@ -1,0 +1,24 @@
+<!doctype html>
+<html
+  lang="en"
+  xmlns:th="http://www.thymeleaf.org"
+  th:replace="layout :: layout"
+>
+  <div th:fragment="content">
+    <section class="page-intro">
+      <div class="intro-copy">
+        <h1>HR Policies</h1>
+        <p>
+          Review the core policies that support a respectful, efficient, and
+          safe workplace.
+        </p>
+      </div>
+    </section>
+    <section class="content-section policy-list">
+      <div th:each="policy : ${policies}" class="policy-card">
+        <h2 th:text="${policy.title}"></h2>
+        <p th:text="${policy.description}"></p>
+      </div>
+    </section>
+  </div>
+</html>
