@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: company-intranet-portal
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: company-intranet-portal
+  template:
+    metadata:
+      labels:
+        app: company-intranet-portal
+    spec:
+      containers:
+        - name: company-intranet-portal
+          image: company-intranet-portal:v1
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8090
