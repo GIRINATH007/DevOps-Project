@@ -1,11 +1,6 @@
 pipeline {
     agent any
 
-    tools {
-        jdk 'JDK25'
-        maven 'Maven-3.9.16'
-    }
-
     environment {
         IMAGE_NAME = 'company-intranet-portal'
         IMAGE_TAG = 'v1'
